@@ -1,0 +1,19 @@
+# Test binaries and coverage output
+*.test
+*.out
+coverage.*
+
+# Build output
+/bin/
+/dist/
+
+# Local settings and secrets: never commit these
+.env
+.env.*
+*.pem
+*.key
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
