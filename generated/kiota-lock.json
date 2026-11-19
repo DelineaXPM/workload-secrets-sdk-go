@@ -1,0 +1,35 @@
+{
+  "descriptionHash": "4B7F4B35D6F3D4A4D7E25370B286CA7B888040EE7DB53092435167BD116CA137C8072356E14BB1C3D5688B888F4CCFEE2AD5CE616A1F631C22E19A87164C1740",
+  "descriptionLocation": "../../../Delinea.WorkloadSecrets.Public.Api/swagger.json",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.38.0",
+  "clientClassName": "WorkloadSecretsApiClient",
+  "typeAccessModifier": "Public",
+  "clientNamespaceName": "github.com/DelineaXPM/workload-secrets-sdk-go/generated",
+  "language": "Go",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
+  "includeAdditionalData": true,
+  "disableSSLValidation": false,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
+}

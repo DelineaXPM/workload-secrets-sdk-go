@@ -1,0 +1,34 @@
+# Runs scripts/check.sh, the same checks Delinea runs before every release: gofmt, tidy modules, build, vet, tests and
+# govulncheck, all on the minimum Go version in go.mod. It also runs daily, because a new vulnerability can be
+# published against code that has not changed.
+#
+# This repository is published from Delinea's internal repository; edit this file there, not here.
+name: test
+
+on:
+  push:
+    branches: [main, release-staging]
+  pull_request:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go.mod
+          cache: false # no shared cache, so one run can never influence another
+
+      - name: Check the Go SDK (scripts/check.sh)
+        run: bash scripts/check.sh
